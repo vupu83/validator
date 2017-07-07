@@ -7,23 +7,25 @@
  * $lessThan->isValid($val, 100);
  * $lessThan->isValid($val, ['max'=>100]);
  */
-namespace Jesda\Validate;
+namespace wizard\Validate;
 
 use Respect\Validation\Validator as v;
 
-class ValidateInt extends BaseValidate
+class ValidateDate extends BaseValidate
 {
-    const INVALID = 'invalid';
+    const INVALID        = 'dateInvalid';
 
-    protected $messageVariables = [];
+    protected $messageVariables = [
+        'format' => 'Y-m-d'
+    ];
 
     protected $messageTemplates = [
-        self::INVALID => '{{value}} is invalid, expected string or integer',
+        self::INVALID        => "{{value}} is an invalid date",
     ];
 
     protected function validate($value)
     {
-        if(!v::intVal()->validate($value)){
+        if(!v::date($this->format)->validate($value)){
             $this->error(self::INVALID);
             return false;
         }

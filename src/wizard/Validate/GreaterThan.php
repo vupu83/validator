@@ -2,24 +2,21 @@
 /**
  * @author mei
  * @date 2017/6/16
- * @since 2017/6/16 檢查數值須小於max
- *
- * $lessThan->isValid($val, 100);
- * $lessThan->isValid($val, ['max'=>100]);
+ * @since 2017/6/16 檢查數值須大於max
  */
-namespace Jesda\Validate;
+namespace wizard\Validate;
 
 use Respect\Validation\Validator as v;
 
-class LessThan extends BaseValidate
+class GreaterThan extends BaseValidate
 {
     protected $messageVariables = [
-        'max' => PHP_INT_MAX
+        'min' => PHP_INT_MIN
     ];
 
     protected function validate($value)
     {
-        if(!v::max($this->max, false)->validate($value)){
+        if(!v::min($this->min, false)->validate($value)){
             $this->error(self::INVALID);
             return false;
         }

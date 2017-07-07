@@ -5,7 +5,7 @@
  * @since 2017/6/16 驗證email格式
  */
 
-namespace Jesda\Validate;
+namespace wizard\Validate;
 
 use Respect\Validation\Validator as v;
 

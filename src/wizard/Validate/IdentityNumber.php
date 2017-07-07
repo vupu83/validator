@@ -4,7 +4,7 @@
  * @date 2017/6/16
  * @since 2017/6/16 description
  */
-namespace Jesda\Validate;
+namespace wizard\Validate;
 
 
 class IdentityNumber extends BaseValidate
