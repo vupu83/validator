@@ -5,7 +5,7 @@
  * @since 2017/6/16 驗證email格式
  */
 
-namespace wizard\Validate;
+namespace framework\Validate;
 
 
 class NotEmpty extends BaseValidate

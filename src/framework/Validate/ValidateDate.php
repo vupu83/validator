@@ -7,19 +7,25 @@
  * $lessThan->isValid($val, 100);
  * $lessThan->isValid($val, ['max'=>100]);
  */
-namespace wizard\Validate;
+namespace framework\Validate;
 
 use Respect\Validation\Validator as v;
 
-class LessThan extends BaseValidate
+class ValidateDate extends BaseValidate
 {
+    const INVALID        = 'dateInvalid';
+
     protected $messageVariables = [
-        'max' => PHP_INT_MAX
+        'format' => 'Y-m-d'
+    ];
+
+    protected $messageTemplates = [
+        self::INVALID        => "{{value}} is an invalid date",
     ];
 
     protected function validate($value)
     {
-        if(!v::max($this->max, false)->validate($value)){
+        if(!v::date($this->format)->validate($value)){
             $this->error(self::INVALID);
             return false;
         }

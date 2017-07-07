@@ -7,7 +7,7 @@
  * $lessThan->isValid($val, 100);
  * $lessThan->isValid($val, ['max'=>100]);
  */
-namespace wizard\Validate;
+namespace framework\Validate;
 
 use Respect\Validation\Validator as v;
 

@@ -5,7 +5,7 @@
  * @since 2017/6/19 依據精靈設定檔整合驗證資料
  */
 
-namespace wizard\Common;
+namespace framework\Common;
 
 use Jesda\Validate\Email;
 use Jesda\Validate\IdentityNumber;

@@ -5,7 +5,7 @@
  * @since 2017/6/14 description
  */
 
-namespace wizard\Validate;
+namespace framework\Validate;
 
 
 abstract class BaseValidate

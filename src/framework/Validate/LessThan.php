@@ -7,23 +7,19 @@
  * $lessThan->isValid($val, 100);
  * $lessThan->isValid($val, ['max'=>100]);
  */
-namespace wizard\Validate;
+namespace framework\Validate;
 
 use Respect\Validation\Validator as v;
 
-class ValidateFloat extends BaseValidate
+class LessThan extends BaseValidate
 {
-    const INVALID = 'invalid';
-
-    protected $messageVariables = [];
-
-    protected $messageTemplates = [
-        self::INVALID => '{{value}} is invalid, expected string, integer, float',
+    protected $messageVariables = [
+        'max' => PHP_INT_MAX
     ];
 
     protected function validate($value)
     {
-        if(!v::floatVal()->validate($value)){
+        if(!v::max($this->max, false)->validate($value)){
             $this->error(self::INVALID);
             return false;
         }
