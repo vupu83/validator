@@ -5,7 +5,7 @@
  * @since 2017/6/14 description
  */
 
-namespace Validate;
+namespace Jesda\Validate;
 
 
 abstract class BaseValidate

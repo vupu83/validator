@@ -4,7 +4,7 @@
  * @date 2017/6/16
  * @since 2017/6/16 檢查數值須大於max
  */
-namespace Validate;
+namespace Jesda\Validate;
 
 use Respect\Validation\Validator as v;
 

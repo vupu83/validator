@@ -5,9 +5,8 @@
  * @since 2017/6/19 依據精靈設定檔整合驗證資料
  */
 
-namespace Common;
+namespace Jesda\Common;
 
-use Jesda\DataObject\StatusDO;
 use Jesda\Validate\Email;
 use Jesda\Validate\IdentityNumber;
 use Jesda\Validate\NotEmpty;
@@ -47,7 +46,7 @@ class DataValidator
      * 錯誤的欄位
      * @var array
      */
-    protected $errorFields = ["statusCode" => StatusDO::Validation_Wizard];
+    protected $errorFields = ["statusCode" => 500];
 
     protected $translator;
 
